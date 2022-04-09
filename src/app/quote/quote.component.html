@@ -10,7 +10,7 @@
     </blockquote>
 
     <div *ngIf="pubdQuote.showDetails">
-      <app-quote-details [pubdQuote]="pubdQuote"></app-quote-details>
+      <app-quote-details [pubdQuote]="pubdQuote" (quoteViewed)="deleteQuote($event, i)"></app-quote-details>
     </div>
   </figure>
 </div>

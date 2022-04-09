@@ -28,6 +28,14 @@ export class QuoteComponent implements OnInit {
     // return this.count;
   }
 
+  deleteQuote(viewed:boolean, index:number){
+   let toErase=confirm("Are you sure you want to delete this goal. This Process cannot be undone.")
+
+   if(toErase){
+     this.pubdQuotes.splice(index,1);
+   }
+  }
+
 
 
   constructor() { }
