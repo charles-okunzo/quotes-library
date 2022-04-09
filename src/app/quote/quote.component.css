@@ -1,0 +1,7 @@
+.far{
+  font-size: 1.5em;
+}
+span{
+  cursor: pointer;
+  user-select: none;
+}

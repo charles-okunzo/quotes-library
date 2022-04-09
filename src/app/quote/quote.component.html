@@ -1,0 +1,14 @@
+<h2 class="text-center my-5">Published<span class="text-info">Quotes</span> Library</h2><hr>
+
+<div *ngFor="let pubdQuote of pubdQuotes">
+  <figure class="my-5">
+    <blockquote class="blockquote">
+      <p>{{pubdQuote.id}}. <i>"{{pubdQuote.quote}}"</i></p>
+      <p><span class="text-info "><i class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}} Upvotes  <span class="mx-5">|</span>  <span class="text-danger "><i class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}} downvotes</p>
+      <button class="btn btn-info">View Details</button>
+    </blockquote>
+    <!-- <figcaption class="blockquote-footer">
+      Someone famous in <cite title="Source Title">Source Title</cite>
+    </figcaption> -->
+  </figure>
+</div>
