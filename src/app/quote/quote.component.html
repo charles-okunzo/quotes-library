@@ -5,7 +5,7 @@
     <blockquote class="blockquote">
       <p>{{pubdQuote.id}}. "{{pubdQuote.quote}}"</p>
       <p class="text-primary"><i>Created {{pubdQuote.date|date}}</i></p>
-      <p><span class="text-success "><i (click)="counter(i)" class="far fa-thumbs-up"></i></span> {{counter(i)}} Upvotes  <span class="mx-5">|</span>  <span class="text-danger "><i class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}} downvotes</p>
+      <p><span class="text-success "><i (click)="counter(i)" class="far fa-thumbs-up"></i></span> {{count}} Upvotes  <span class="mx-5">|</span>  <span class="text-danger "><i class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}} downvotes</p>
       <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
     </blockquote>
 
