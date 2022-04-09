@@ -21,8 +21,10 @@ export class QuoteComponent implements OnInit {
 
     this.count+=this.upvotesArr[index];
     return this.count;
-    
-    
+  }
+
+  toggleDet(index:number){
+    this.pubdQuotes[index].showDetails=!this.pubdQuotes[index].showDetails
   }
 
   constructor() { }

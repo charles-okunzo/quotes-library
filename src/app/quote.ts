@@ -6,6 +6,7 @@ export class Quote {
   downvote:number;
   publisher:string;
   date:Date;
+  showDetails:boolean;
 
   constructor(id:number, quote:string, author:string, upvote:number, downvote:number, publisher:string, date:Date){
     this.id=id;
@@ -15,5 +16,6 @@ export class Quote {
     this.downvote=downvote;
     this.publisher=publisher;
     this.date=date;
+    this.showDetails=false;
   }
 }

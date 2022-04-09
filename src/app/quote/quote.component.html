@@ -6,10 +6,10 @@
       <p>{{pubdQuote.id}}. "{{pubdQuote.quote}}"</p>
       <p class="text-primary"><i>Created {{pubdQuote.date|date}}</i></p>
       <p><span class="text-success "><i (click)="counter(i)" class="far fa-thumbs-up"></i></span> {{counter(i)}} Upvotes  <span class="mx-5">|</span>  <span class="text-danger "><i class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}} downvotes</p>
-      <button class="btn btn-info">View Details</button>
+      <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
     </blockquote>
 
-    <div>
+    <div *ngIf="pubdQuote.showDetails">
       <app-quote-details [pubdQuote]="pubdQuote"></app-quote-details>
     </div>
   </figure>
