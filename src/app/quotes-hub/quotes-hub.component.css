@@ -1,0 +1,7 @@
+.bg-image{
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('src/assets/images/pexels-photo-6956352.jpeg');
+}
+
+h2{
+  text-shadow: 1px 1px 3px white;
+}

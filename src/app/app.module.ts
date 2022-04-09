@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BannerComponent } from './banner/banner.component';
 import { PopularQuotesComponent } from './popular-quotes/popular-quotes.component';
+import { QuotesHubComponent } from './quotes-hub/quotes-hub.component';
+import { QuotesFormComponent } from './quotes-form/quotes-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     BannerComponent,
-    PopularQuotesComponent
+    PopularQuotesComponent,
+    QuotesHubComponent,
+    QuotesFormComponent
   ],
   imports: [
     BrowserModule,
