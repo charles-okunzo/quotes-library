@@ -8,6 +8,7 @@ import { BannerComponent } from './banner/banner.component';
 import { PopularQuotesComponent } from './popular-quotes/popular-quotes.component';
 import { QuotesHubComponent } from './quotes-hub/quotes-hub.component';
 import { QuotesFormComponent } from './quotes-form/quotes-form.component';
+import { QuoteComponent } from './quote/quote.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { QuotesFormComponent } from './quotes-form/quotes-form.component';
     BannerComponent,
     PopularQuotesComponent,
     QuotesHubComponent,
-    QuotesFormComponent
+    QuotesFormComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,
