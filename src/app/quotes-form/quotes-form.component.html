@@ -1,4 +1,4 @@
-<form class="my-5" #quoteForm="ngForm">
+<form (ngSubmit)="submitQuote()" class="my-5" #quoteForm="ngForm">
   <div class="form-group mb-3">
     <label for="qoute" class="form-label">Quote:</label><hr>
     <textarea name="quote" id="quote" rows="5" class="form-control" [(ngModel)]="newPubdQuote.quote" #quote="ngModel" required placeholder="E.g. 'Education is the most powerful thing which you can use to change the world'"></textarea>

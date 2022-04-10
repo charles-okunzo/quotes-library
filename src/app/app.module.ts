@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BannerComponent } from './banner/banner.component';
 import { PopularQuotesComponent } from './popular-quotes/popular-quotes.component';
-import { QuotesHubComponent } from './quotes-hub/quotes-hub.component';
 import { QuotesFormComponent } from './quotes-form/quotes-form.component';
 import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
@@ -18,7 +17,6 @@ import { QuoteDetailsComponent } from './quote-details/quote-details.component';
     NavbarComponent,
     BannerComponent,
     PopularQuotesComponent,
-    QuotesHubComponent,
     QuotesFormComponent,
     QuoteComponent,
     QuoteDetailsComponent

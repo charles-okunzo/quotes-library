@@ -36,6 +36,14 @@ export class QuoteComponent implements OnInit {
    }
   }
 
+  addNewQuote(newQuote:Quote){
+    let quoteLength=this.pubdQuotes.length
+    let newArr=[];
+    newQuote.id= quoteLength+1;
+    newArr.push(newQuote)
+    newArr.forEach(item=>this.pubdQuotes.push(item))
+  }
+
 
 
   constructor() { }
