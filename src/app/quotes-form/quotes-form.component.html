@@ -1,17 +1,32 @@
 <form class="my-5" #quoteForm="ngForm">
   <div class="form-group mb-3">
     <label for="qoute" class="form-label">Quote:</label><hr>
-    <textarea name="quote" id="quote" rows="5" class="form-control" [(ngModel)]="newPubdQuote.quote" required placeholder="E.g. 'Education is the most powerful thing which you can use to change the world'"></textarea>
+    <textarea name="quote" id="quote" rows="5" class="form-control" [(ngModel)]="newPubdQuote.quote" #quote="ngModel" required placeholder="E.g. 'Education is the most powerful thing which you can use to change the world'"></textarea>
+    <div *ngIf="quote.invalid && (quote.touched || quote.dirty)"  class="alert alert-danger">
+      <p>
+        Quote is required
+      </p>
+    </div>
   </div>
 
   <div class="form-group mb-3">
     <label for="author" class="form-label">Quote Author:</label><hr>
-    <input type="text" class="form-control" name="author" id="author" [(ngModel)]="newPubdQuote.author" required placeholder="E.g. Nelson Mandela">
+    <input type="text" class="form-control" name="author" id="author" [(ngModel)]="newPubdQuote.author" #author="ngModel" required placeholder="E.g. Nelson Mandela">
+    <div *ngIf="author.invalid && (author.dirty || author.touched)" class="alert alert-danger">
+      <p>
+        Auther name is required
+      </p>
+    </div>
   </div>
 
   <div class="form-group mb-3">
     <label for="publisher" class="form-label">Published By:</label><hr>
-    <input type="text" class="form-control" name="publisher" id="publisher" [(ngModel)]="newPubdQuote.publisher" placeholder="E.g. Charles Okunzo">
+    <input type="text" class="form-control" name="publisher" id="publisher" [(ngModel)]="newPubdQuote.publisher" #publisher="ngModel" required placeholder="E.g. Charles Okunzo">
+    <div *ngIf="publisher.invalid && (publisher.dirty || publisher.touched)" class="alert alert-danger">
+      <p>
+        Publisher name is required
+      </p>
+    </div>
   </div>
 
 
