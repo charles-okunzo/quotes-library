@@ -43,7 +43,6 @@ export class QuoteComponent implements OnInit {
   }
 
   addNewQuote(newQuote:Quote){
-    console.log(newQuote)
     let quoteLength=this.pubdQuotes.length
     newQuote.id= quoteLength+1;
     this.pubdQuotes.push(newQuote);

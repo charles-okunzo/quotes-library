@@ -14,12 +14,14 @@ export class QuotesFormComponent implements OnInit {
   downvote!:number;
   publisher!:string;
   date!:Date;
+  submitted=false;
 
   newPubdQuote!:Quote;
 
   @Output() addQuote= new EventEmitter<Quote>();
 
   submitQuote(){
+    this.submitted=true;
     this.newPubdQuote= new Quote(this.id,this.quote,this.author,0,0,this.publisher, new Date());
 
     this.addQuote.emit(this.newPubdQuote);

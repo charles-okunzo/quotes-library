@@ -1,35 +1,48 @@
-<form (ngSubmit)="submitQuote()" class="my-5" #quoteForm="ngForm">
-  <div class="form-group mb-3">
-    <label for="qoute" class="form-label">Quote:</label><hr>
-    <textarea name="quote" id="quote" rows="5" class="form-control" [(ngModel)]="quote" #name="ngModel" required placeholder="E.g. 'Education is the most powerful thing which you can use to change the world'"></textarea>
-    <div *ngIf="name.invalid && (name.touched || name.dirty)"  class="alert alert-danger">
-      <p>
-        Quote is required
-      </p>
+<div [hidden]="submitted">
+  <form (ngSubmit)="submitQuote()" class="my-5" #quoteForm="ngForm">
+
+    <div class="form-group mb-3">
+      <label for="author" class="form-label">Quote Author:</label><hr>
+      <input type="text" class="form-control" name="author" id="author" [(ngModel)]="author" #name="ngModel" required placeholder="E.g. Nelson Mandela">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <p>
+          Auther name is required
+        </p>
+      </div>
     </div>
-  </div>
-
-  <div class="form-group mb-3">
-    <label for="author" class="form-label">Quote Author:</label><hr>
-    <input type="text" class="form-control" name="author" id="author" [(ngModel)]="author" #name="ngModel" required placeholder="E.g. Nelson Mandela">
-    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-      <p>
-        Auther name is required
-      </p>
+  
+    <div class="form-group mb-3">
+      <label for="publisher" class="form-label">Published By:</label><hr>
+      <input type="text" class="form-control" name="publisher" id="publisher" [(ngModel)]="publisher" #name="ngModel" required placeholder="E.g. Charles Okunzo">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <p>
+          Name of publisher is required
+        </p>
+      </div>
     </div>
-  </div>
-
-  <div class="form-group mb-3">
-    <label for="publisher" class="form-label">Published By:</label><hr>
-    <input type="text" class="form-control" name="publisher" id="publisher" [(ngModel)]="publisher" #name="ngModel" required placeholder="E.g. Charles Okunzo">
-    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-      <p>
-        Publisher name is required
-      </p>
+  
+    <div class="form-group mb-3">
+      <label for="qoute" class="form-label">Quote:</label><hr>
+      <textarea name="quote" id="quote" rows="5" class="form-control" [(ngModel)]="quote" #name="ngModel" required placeholder="E.g. 'Education is the most powerful thing which you can use to change the world'"></textarea>
+      <div *ngIf="name.invalid && (name.touched || name.dirty)"  class="alert alert-danger">
+        <p>
+          Quote is required
+        </p>
+      </div>
     </div>
-  </div>
+  
+  
+    <button [disabled]="!quoteForm.form.valid" type="submit" class="btn btn-outline-info mt-3">Publish</button>
+    <p *ngIf="quoteForm.invalid" class="text-center text-warning">Fill all fields to publish</p>
+  </form>
+</div>
 
-
-  <button [disabled]="!quoteForm.form.valid" type="submit" class="btn btn-outline-info mt-3">Publish</button>
-
-</form>
+<div [hidden]="!submitted" class="py-5">
+  <h2>You Submitted</h2>
+  <p class="text-warning">(To view you published quote see Library section below)</p>
+  <hr>
+  <p><b>Author:</b> {{author}}</p>
+  <p><b>Published By:</b> {{publisher}}</p>
+  <p><b>Quote:</b> </p> <span>{{quote}}</span>
+  <button class="btn btn-info mt-4" (click)="submitted=false" type="submit">Publish New Quote</button>
+</div>
