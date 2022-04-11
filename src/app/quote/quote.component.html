@@ -17,7 +17,7 @@
           <blockquote  class="blockquote">
             <p>{{pubdQuote.id}}. "{{pubdQuote.quote}}"</p>
             <p class="pubtime">Created {{pubdQuote.date|timeElapsed}} ago</p>
-            <p><span class="text-success "><i (click)="counter(i)" class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}} Upvotes  <span class="mx-5">|</span>  <span class="text-danger "><i class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}} downvotes</p>
+            <p><span class="text-success "><i (click)="upvoteCounter(i)" class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}}  <span class="mx-5">|</span>  <span class="text-danger "><i (click)="downvoteCounter(i)" class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}}</p>
             <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
           </blockquote>
 

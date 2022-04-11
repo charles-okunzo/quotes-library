@@ -20,10 +20,14 @@ export class QuoteComponent implements OnInit {
   // upvotesArr:number[]= this.pubdQuotes.map(pubdQuote=>pubdQuote.upvote);
 
 
-  counter(index:number){
+  upvoteCounter(index:number){
 
     this.pubdQuotes[index].upvote++
 
+  }
+
+  downvoteCounter(index:number){
+    this.pubdQuotes[index].downvote++
   }
 
   deleteQuote(viewed:boolean, index:number){

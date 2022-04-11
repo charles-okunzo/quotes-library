@@ -20,7 +20,7 @@ export class QuotesFormComponent implements OnInit {
   @Output() addQuote= new EventEmitter<Quote>();
 
   submitQuote(){
-    this.newPubdQuote= new Quote(this.id,this.quote,this.author,this.upvote,this.downvote,this.publisher, new Date());
+    this.newPubdQuote= new Quote(this.id,this.quote,this.author,0,0,this.publisher, new Date());
 
     this.addQuote.emit(this.newPubdQuote);
   }
