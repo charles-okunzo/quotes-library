@@ -19,17 +19,15 @@ export class QuoteComponent implements OnInit {
   }
   // upvotesArr:number[]= this.pubdQuotes.map(pubdQuote=>pubdQuote.upvote);
 
-  count=0;
 
   counter(index:number){
 
-    this.count+=this.pubdQuotes[index].upvote;
-    this.count++
-    // return this.count;
+    this.pubdQuotes[index].upvote++
+
   }
 
   deleteQuote(viewed:boolean, index:number){
-   let toErase=confirm("Are you sure you want to delete this goal. This Process cannot be undone.")
+   let toErase=confirm("Are you sure you want to delete this goal. This process cannot be undone.")
 
    if(toErase){
      this.pubdQuotes.splice(index,1);
@@ -37,11 +35,10 @@ export class QuoteComponent implements OnInit {
   }
 
   addNewQuote(newQuote:Quote){
+    console.log(newQuote)
     let quoteLength=this.pubdQuotes.length
-    let newArr=[];
     newQuote.id= quoteLength+1;
-    newArr.push(newQuote)
-    newArr.forEach(item=>this.pubdQuotes.push(item))
+    this.pubdQuotes.push(newQuote);
   }
 
 

@@ -10,6 +10,7 @@ import { PopularQuotesComponent } from './popular-quotes/popular-quotes.componen
 import { QuotesFormComponent } from './quotes-form/quotes-form.component';
 import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
+import { TimeElapsedPipe } from './time-elapsed.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { QuoteDetailsComponent } from './quote-details/quote-details.component';
     PopularQuotesComponent,
     QuotesFormComponent,
     QuoteComponent,
-    QuoteDetailsComponent
+    QuoteDetailsComponent,
+    TimeElapsedPipe
   ],
   imports: [
     BrowserModule,

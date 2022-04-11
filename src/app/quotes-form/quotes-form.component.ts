@@ -7,12 +7,21 @@ import { Quote } from '../quote';
   styleUrls: ['./quotes-form.component.css']
 })
 export class QuotesFormComponent implements OnInit {
+  id!:number;
+  quote!:string;
+  author!:string;
+  upvote!:number;
+  downvote!:number;
+  publisher!:string;
+  date!:Date;
 
-  newPubdQuote= new Quote(0,"","",0,0,"", new Date());
+  newPubdQuote!:Quote;
 
   @Output() addQuote= new EventEmitter<Quote>();
 
   submitQuote(){
+    this.newPubdQuote= new Quote(this.id,this.quote,this.author,this.upvote,this.downvote,this.publisher, new Date());
+
     this.addQuote.emit(this.newPubdQuote);
   }
 
