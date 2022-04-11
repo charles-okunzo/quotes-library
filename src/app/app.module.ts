@@ -12,6 +12,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 import { TimeElapsedPipe } from './time-elapsed.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HighlightDirective } from './highlight.directive';
     QuoteComponent,
     QuoteDetailsComponent,
     TimeElapsedPipe,
-    HighlightDirective
+    HighlightDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
