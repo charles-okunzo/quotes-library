@@ -13,18 +13,38 @@
       <h2 class="text-center my-5">Published<span class="text-info">Quotes</span> Library</h2><hr>
 
       <div *ngFor="let pubdQuote of pubdQuotes; let i=index">
-        <figure class="my-5 card text-dark p-3">
-          <blockquote  class="blockquote">
-            <p>{{pubdQuote.id}}. "{{pubdQuote.quote}}"</p>
-            <p class="pubtime">Created {{pubdQuote.date|timeElapsed}} ago</p>
-            <p><span class="text-success "><i (click)="upvoteCounter(i)" class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}}  <span class="mx-5">|</span>  <span class="text-danger "><i (click)="downvoteCounter(i)" class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}}</p>
-            <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
-          </blockquote>
+        <div *ngIf="pubdQuote.upvote==highVote && pubdQuote.upvote>0; then highlight else default">
 
-          <div *ngIf="pubdQuote.showDetails">
-            <app-quote-details [pubdQuote]="pubdQuote" (quoteViewed)="deleteQuote($event, i)"></app-quote-details>
-          </div>
-        </figure>
+        </div>
+        <ng-template #highlight>
+          <figure appHighlight class="my-5 card text-dark p-3" id="posted">
+            <blockquote  class="blockquote">
+              <p>{{pubdQuote.id}}. "{{pubdQuote.quote}}"</p>
+              <p class="pubtime">Created {{pubdQuote.date|timeElapsed}} ago</p>
+              <p><span class="text-success "><i (click)="upvoteCounter(i)" class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}}  <span class="mx-5">|</span>  <span class="text-danger "><i (click)="downvoteCounter(i)" class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}}</p>
+              <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
+            </blockquote>
+  
+            <div *ngIf="pubdQuote.showDetails">
+              <app-quote-details [pubdQuote]="pubdQuote" (quoteViewed)="deleteQuote($event, i)"></app-quote-details>
+            </div>
+          </figure>
+        </ng-template>
+
+        <ng-template #default>
+          <figure class="my-5 card text-dark p-3">
+            <blockquote  class="blockquote">
+              <p>{{pubdQuote.id}}. "{{pubdQuote.quote}}"</p>
+              <p class="pubtime">Created {{pubdQuote.date|timeElapsed}} ago</p>
+              <p><span class="text-success "><i (click)="upvoteCounter(i)" class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}}  <span class="mx-5">|</span>  <span class="text-danger "><i (click)="downvoteCounter(i)" class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}}</p>
+              <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
+            </blockquote>
+  
+            <div *ngIf="pubdQuote.showDetails">
+              <app-quote-details [pubdQuote]="pubdQuote" (quoteViewed)="deleteQuote($event, i)"></app-quote-details>
+            </div>
+          </figure>
+        </ng-template>
       </div>
     </div>
   </div>

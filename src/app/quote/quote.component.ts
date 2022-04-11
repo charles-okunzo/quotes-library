@@ -14,15 +14,19 @@ export class QuoteComponent implements OnInit {
     new Quote(3, "If you are walking down the right path and you're willing to keep walking, eventually you'll make progress", "Barrack Obama", 0, 0, "Angel Becky", new Date(2022, 2, 31))
   ];
 
+  
+
   toggleDet(index:number){
     this.pubdQuotes[index].showDetails=!this.pubdQuotes[index].showDetails
   }
   // upvotesArr:number[]= this.pubdQuotes.map(pubdQuote=>pubdQuote.upvote);
 
-
+  highVote!:number;
   upvoteCounter(index:number){
 
     this.pubdQuotes[index].upvote++
+    let newupvoteArr:number[]= this.pubdQuotes.map(quote=>quote.upvote)
+    this.highVote=Math.max(...newupvoteArr);
 
   }
 
