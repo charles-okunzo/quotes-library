@@ -1,8 +1,0 @@
-img{
-  max-height: 100%;
-  min-width: 100%;
-  object-fit: contain;
-}
-.carousel-item{
-  max-height: 100vh;
-}
