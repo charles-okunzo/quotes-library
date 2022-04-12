@@ -22,7 +22,7 @@
           <figure appHighlight class="my-5 card text-dark p-3" id="posted">
             <blockquote  class="blockquote">
               <p>{{pubdQuote.id}}. "{{pubdQuote.quote}}"</p>
-              <p class="pubtime">Created {{pubdQuote.date|timeElapsed}} ago</p>
+              <p class="pubtime">Created {{pubdQuote.date|timeElapsed}}</p>
               <p><span class="text-success "><i (click)="upvoteCounter(i)" class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}}  <span class="mx-5">|</span>  <span class="text-danger "><i (click)="downvoteCounter(i)" class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}}</p>
               <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
             </blockquote>
@@ -38,7 +38,7 @@
             <blockquote  class="blockquote">
               <span><i class="fas fa-quote-right"></i></span>
               <p>{{pubdQuote.id}}. {{pubdQuote.quote}}</p>
-              <p class="pubtime">Created {{pubdQuote.date|timeElapsed}} ago</p>
+              <p class="pubtime">Created {{pubdQuote.date|timeElapsed}}</p>
               <p><span class="text-success "><i (click)="upvoteCounter(i)" class="far fa-thumbs-up"></i></span> {{pubdQuote.upvote}}  <span class="mx-5">|</span>  <span class="text-danger "><i (click)="downvoteCounter(i)" class="far fa-thumbs-down"></i></span> {{pubdQuote.downvote}}</p>
               <button (click)="toggleDet(i)" class="btn btn-info">View Details</button>
             </blockquote>

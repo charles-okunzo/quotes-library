@@ -12,54 +12,56 @@ export class TimeElapsedPipe implements PipeTransform {
     let secondsPassed= Math.floor((currentTime-value)/1000);
     let interval= secondsPassed/31536000;
     if(interval>2){
-      return `${Math.floor(interval)} years`
+      return `${Math.floor(interval)} years ago`
     }
     interval= secondsPassed/31536000;
     if(interval>1){
-      return `${Math.floor(interval)} year`
+      return `${Math.floor(interval)} year ago`
     }
 
     interval= secondsPassed/2592000;
     if(interval>2){
-      return `${Math.floor(interval)} months`
+      return `${Math.floor(interval)} months ago`
     }
 
     interval= secondsPassed/2592000;
     if(interval>1){
-      return `${Math.floor(interval)} month`
+      return `${Math.floor(interval)} month ago`
     }
 
     interval=secondsPassed/86400;
     if(interval>2){
-      return `${Math.floor(interval)} days`
+      return `${Math.floor(interval)} days ago`
     }
 
     interval=secondsPassed/86400;
     if(interval>1){
-      return `${Math.floor(interval)} day`
+      return `${Math.floor(interval)} day ago`
     }
 
     interval=secondsPassed/3600;
     if(interval>2){
-      return `${Math.floor(interval)} hours`
+      return `${Math.floor(interval)} hours ago`
     }
 
     interval=secondsPassed/3600;
     if(interval>1){
-      return `${Math.floor(interval)} hour`
+      return `${Math.floor(interval)} hour ago`
     }
 
     interval=secondsPassed/60;
     if(interval>2){
-      return `${Math.floor(interval)} minutes`
+      return `${Math.floor(interval)} minutes ago`
     }
 
     interval=secondsPassed/60;
     if(interval>1){
-      return `${Math.floor(interval)} minute`
+      return `${Math.floor(interval)} minute ago`
     }
 
-    return `${Math.floor(interval)} seconds`
+    if(interval<60){
+      return `Just now`
+    }
   }
   
 
