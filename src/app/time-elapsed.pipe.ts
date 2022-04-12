@@ -59,7 +59,7 @@ export class TimeElapsedPipe implements PipeTransform {
       return `${Math.floor(interval)} minute ago`
     }
 
-    return `Just now`
+    return `${Math.floor(interval)} seconds`
   }
   
 
